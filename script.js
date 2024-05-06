@@ -12,57 +12,68 @@ button.addEventListener('click',async (e)=>{
 			rs(val); 
 		},2000);
 	});
+pro.then((val)=>{
+	op.innerText = `Result: ${val}`;
+	// step 3
+	return new Promise((rs,rj)=>{
+		setTimeout(()=>{
+			rs(val); 
+		},2000);
+		
+	});
+}).then((val)=>{
+	op.innerText = `Result: ${val}`;
+	// step 4
+	return new Promise((rs,rj)=>{
+		setTimeout(()=>{
+			rs(val*2); 
+		},1000);
+		
+	});
+	
+}).then((val)=>{
+	op.innerText = `Result: ${val}`;
+	// step 5
+	return new Promise((rs,rj)=>{
+		setTimeout(()=>{
+			rs(val-3); 
+		},1000);
+		
+	});
+	
+}).then((val)=>{
+	op.innerText = `Result: ${val}`;
+	// step 6
+	return new Promise((rs,rj)=>{
+		setTimeout(()=>{
+			rs(val/2); 
+		},1000);
+		
+	});
+	
+}).then((val)=>{
+	op.innerText = `Result: ${val}`;
+	// step 7
+	return new Promise((rs,rj)=>{
+		setTimeout(()=>{
+			rs(val+10); 
+		},1000);
+		
+	});
+	
+}).then((val)=>{ 
+	op.innerText = `Result: ${val}`;
+	// step 8
+	return new Promise((rs,rj)=>{
+			rs(val); 
+	});
+	
+}).then((val)=>{
+	op.textContent = `Final Result: ${val}`;
 
-	try{
-		let num = await pro;
-		op.innerText = `Result: ${num}`;
-		// step 3
-		pro = new Promise((rs,rj)=>{
-			setTimeout(()=>{
-				rs(num);
-			},2000);
-		});
-		num = await pro;
-		op.innerText = `Result: ${num}`;
-
-		// step 4
-		pro = new Promise((rs,rj)=>{
-			setTimeout(()=>{
-				rs(num*2);
-			},1000);
-		});
-		num = await pro;
-		op.innerText = `Result: ${num}`;
-
-		// step 5
-		pro = new Promise((rs,rj)=>{
-			setTimeout(()=>{
-				rs(num-3);
-			},1000);
-		});
-		num = await pro;
-		op.innerText = `Result: ${num}`;
-
-		// step 6
-		pro = new Promise((rs,rj)=>{
-			setTimeout(()=>{
-				rs(num/2);
-			},1000);
-		});
-		num = await pro;
-		op.innerText = `Result: ${num}`;
-
-		// step 7
-		pro = new Promise((rs,rj)=>{
-			setTimeout(()=>{
-				rs(num+10);
-			},1000);
-		});
-		num = await pro;
-		op.innerText = `Result: ${num}`;
-
-		op.innerText = `Final Result: ${num}`;
-	}catch(err){
-		console.log(err.message);
-	}
+	
+}).catch((err)=>{
+	console.log(err.message);
 });
+	
+}); 
